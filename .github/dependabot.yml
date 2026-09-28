@@ -4,13 +4,23 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
-    allow:
-      - dependency-type: "development"
-        update-types:
-          - "version-update:semver-minor"
+    open-pull-requests-limit: 10
     groups:
       security-updates:
         applies-to: security-updates
+        patterns:
+          - "*"
+      devDependencies:
+        dependency-type: "development"
+        patterns:
+          - "*"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      actions:
         patterns:
           - "*"

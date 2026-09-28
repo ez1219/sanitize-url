@@ -36,28 +36,7 @@ module.exports = {
     { value: "revert", name: "revert:   Revert a commit" },
   ],
 
-  scopes: [
-    { name: "american-express" },
-    { name: "apple-pay" },
-    { name: "client" },
-    { name: "data-collector" },
-    { name: "fastlane" },
-    { name: "google-payment" },
-    { name: "hosted-fields" },
-    { name: "instant-verification" },
-    { name: "local-payment" },
-    { name: "payment-ready" },
-    { name: "payment-request" },
-    { name: "paypal-checkout" },
-    { name: "paypal-checkout-v6" },
-    { name: "sepa" },
-    { name: "three-d-secure" },
-    { name: "us-bank-account" },
-    { name: "vault-manager" },
-    { name: "venmo" },
-    { name: "deps" },
-    { name: "other" },
-  ],
+  scopes: [],
 
   // When type is "review", skip the scope prompt entirely
   scopeOverrides: {

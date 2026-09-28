@@ -1,12 +1,8 @@
 name: Security
 
 permissions:
-  contents: write # Needed by both CodeQL and dependency review
-  pull-requests: write # Needed by dependency review
-  statuses: write # Needed by dependency review (to post checks)
-  security-events: write # Needed by CodeQL to upload SARIF
-  packages: read # Needed by CodeQL for private/internal packs
-  actions: read # Needed by CodeQL to access internal actions
+  contents: read
+  security-events: write
 
 on:
   pull_request:
@@ -16,9 +12,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  codeql-javascript:
-    uses: braintree/security-workflows/.github/workflows/codeql.yml@c8038c54b62baeabff63eba5a29f7c28ebac6214  # main
-    with:
-      language: javascript-typescript
-  dependency-review:
-    uses: braintree/security-workflows/.github/workflows/dependency-review.yml@c8038c54b62baeabff63eba5a29f7c28ebac6214  # main
+  codeql:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: javascript-typescript
+      - uses: github/codeql-action/analyze@v3

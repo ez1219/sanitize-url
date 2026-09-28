@@ -14,4 +14,4 @@
 
 ### Reviewers
 
-@braintree/team-sdk-js
+@ez1219

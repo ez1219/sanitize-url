@@ -25,35 +25,8 @@ module.exports = {
       ],
     ],
 
-    "scope-enum": [
-      2,
-      "always",
-      [
-        "american-express",
-        "apple-pay",
-        "client",
-        "data-collector",
-        "fastlane",
-        "google-payment",
-        "hosted-fields",
-        "instant-verification",
-        "local-payment",
-        "payment-ready",
-        "payment-request",
-        "paypal-checkout",
-        "paypal-checkout-v6",
-        "sepa",
-        "three-d-secure",
-        "us-bank-account",
-        "vault-manager",
-        "venmo",
-        "deps",
-        "dev-deps",
-        "other",
-      ],
-    ],
-    // Scope is optional but recommended
-    "scope-empty": [1, "never"],
+    // Scope configuration: optional
+    "scope-empty": [0, "never"],
 
     // Subject configuration
     "subject-empty": [2, "never"],

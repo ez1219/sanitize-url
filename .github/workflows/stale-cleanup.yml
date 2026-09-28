@@ -6,15 +6,17 @@ on:
     - cron: "0 0 * * 3"
   workflow_dispatch:
 
-permissions: {}
+permissions:
+  issues: write
+  pull-requests: write
 
 jobs:
   stale:
-    uses: braintree/web-sdk-github-actions/.github/workflows/stale-cleanup.yml@cf4b40ff4b46c96aadbfae38806b8de404a98cb3
-    permissions:
-      actions: write
-      issues: write
-      pull-requests: write
-      contents: write
-    with:
-      start-date: "2026-06-01T00:00:00Z"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: "This issue is stale because it has been open for 60 days with no activity."
+          stale-pr-message: "This PR is stale because it has been open for 60 days with no activity."
+          days-before-stale: 60
+          days-before-close: 7

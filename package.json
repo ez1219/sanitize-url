@@ -4,6 +4,9 @@
   "description": "A url sanitizer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "",
   "scripts": {
     "prepublishOnly": "npm run build",

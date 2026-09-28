@@ -21,7 +21,14 @@ function decodeHtmlCharacters(str: string) {
 }
 
 function isValidUrl(url: string): boolean {
-  return URL.canParse(url);
+  if (typeof URL !== "undefined" && typeof URL.canParse === "function") {
+    return URL.canParse(url);
+  }
+  try {
+    return Boolean(new URL(url));
+  } catch {
+    return false;
+  }
 }
 
 function decodeURI(uri: string): string {

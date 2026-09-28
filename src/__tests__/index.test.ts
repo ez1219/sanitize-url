@@ -260,4 +260,40 @@ describe("sanitizeUrl", () => {
       });
     });
   });
+
+  it("replaces invalid http/https URLs with BLANK_URL", () => {
+    expect(sanitizeUrl("http://[invalid]")).toBe(BLANK_URL);
+    expect(sanitizeUrl("https://[invalid]")).toBe(BLANK_URL);
+  });
+
+  describe("when URL.canParse is undefined", () => {
+    let originalCanParse: typeof URL.canParse;
+
+    beforeEach(() => {
+      originalCanParse = URL.canParse;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      URL.canParse = null;
+    });
+
+    afterEach(() => {
+      URL.canParse = originalCanParse;
+    });
+
+    it("sanitizes valid http/https URLs properly using fallback", () => {
+      expect(sanitizeUrl("http://example.com/path")).toBe(
+        "http://example.com/path",
+      );
+      expect(sanitizeUrl("https://example.com")).toBe("https://example.com/");
+    });
+
+    it("replaces invalid http/https URLs with BLANK_URL using fallback", () => {
+      expect(sanitizeUrl("http://[invalid]")).toBe(BLANK_URL);
+      expect(sanitizeUrl("https://[invalid]")).toBe(BLANK_URL);
+    });
+
+    it("replaces javascript URLs with BLANK_URL", () => {
+      expect(sanitizeUrl("javascript:alert(1)")).toBe(BLANK_URL);
+    });
+  });
 });

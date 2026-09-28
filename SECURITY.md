@@ -12,7 +12,7 @@ Instead, report it using one of the following ways:
 
 - Email the PayPal Security Team at [security@paypal.com](mailto:security@paypal.com)
 - Submit through the [PayPal Bug Bounty Program](https://hackerone.com/paypal) on HackerOne
-- Report a [vulnerability](https://github.com/braintree/sanitize-url/security/advisories/new) directly via private vulnerability reporting on GitHub
+- Report a [vulnerability](https://github.com/ez1219/sanitize-url/security/advisories/new) directly via private vulnerability reporting on GitHub
 
 Please include the following in your report:
 

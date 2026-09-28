@@ -1,5 +1,5 @@
 {
-  "name": "@braintree/sanitize-url",
+  "name": "@ez1219/sanitize-url",
   "version": "7.1.2",
   "description": "A url sanitizer",
   "main": "dist/index.js",
@@ -18,14 +18,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/braintree/sanitize-url.git"
+    "url": "git+https://github.com/ez1219/sanitize-url.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/braintree/sanitize-url/issues"
+    "url": "https://github.com/ez1219/sanitize-url/issues"
   },
-  "homepage": "https://github.com/braintree/sanitize-url#readme",
+  "homepage": "https://github.com/ez1219/sanitize-url#readme",
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",

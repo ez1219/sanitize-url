@@ -3,13 +3,13 @@
 ## Installation
 
 ```sh
-npm install -S @braintree/sanitize-url
+npm install -S @ez1219/sanitize-url
 ```
 
 ## Usage
 
 ```js
-var sanitizeUrl = require("@braintree/sanitize-url").sanitizeUrl;
+var sanitizeUrl = require("@ez1219/sanitize-url").sanitizeUrl;
 
 sanitizeUrl("https://example.com"); // 'https://example.com'
 sanitizeUrl("http://example.com"); // 'http://example.com'
